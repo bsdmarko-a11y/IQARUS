@@ -1,0 +1,42 @@
+/* Ovo je komentar u CSS-u i mi si tu pomažemo */
+/* selektor elementa */
+body{
+    background-color: antiquewhite;
+}
+
+h1{
+    color: #ff00ff;
+    text-align: center;
+    font-family: sans-serif;
+}
+
+h2{
+    color: blue;
+}
+
+
+/* selektor klase */
+.naslov{
+    color: green;
+}
+
+
+div p{
+    color: pink;
+}
+
+
+/* Selektor identifikacije */
+
+#sadrzaj{
+    font-family: sans-serif;
+}
+
+
+ul{
+    list-style: none;
+}
+
+ul li::before{
+    content: '⚽️';
+}

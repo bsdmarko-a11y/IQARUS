@@ -1,0 +1,218 @@
+/* Reset i osnovni stilovi */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            --primary: #2b3a4a;
+            --accent: #00adb5;
+            --bg-light: #f4f7f6;
+            --text-dark: #333333;
+            --card-bg: #ffffff;
+            --border-radius: 12px;
+            --transition: all 0.3s ease;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+            padding: 0;
+        }
+
+        /* Navigacija / Zaglavlje */
+        header {
+            background-color: var(--primary);
+            color: #ffffff;
+            padding: 2rem 1rem;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            font-size: 2.2rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        header p {
+            color: #b0bec5;
+            font-size: 1.1rem;
+        }
+
+        /* Glavni kontejner */
+        .container {
+            max-width: 1100px;
+            margin: 3rem auto;
+            padding: 0 1.5rem;
+        }
+
+        .intro {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            margin-bottom: 3rem;
+            border-left: 5px solid var(--accent);
+        }
+
+        /* Grid raspored za multimedijalne elemente */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            gap: 2.5rem;
+        }
+
+        @media (max-width: 600px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Stilovi za kartice komponenata */
+        .card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+
+        .card-header {
+            background-color: #f8f9fa;
+            padding: 1.2rem 1.5rem;
+            border-bottom: 1px solid #edf2f7;
+        }
+
+        .card-header h2 {
+            font-size: 1.3rem;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .card-body {
+            padding: 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .media-container {
+            width: 100%;
+            border-radius: 8px;
+            overflow: hidden;
+            background-color: #000;
+            margin-bottom: 1.5rem;
+        }
+
+        /* 1. Stilovi za Slike */
+        .img-showcase {
+            width: 100%;
+            height: 250px;
+            object-fit: cover; /* Sprečava distorziju slike */
+            display: block;
+            transition: var(--transition);
+        }
+
+        .card:hover .img-showcase {
+            transform: scale(1.02);
+        }
+
+        /* 2. Stilovi za Video */
+        video {
+            width: 100%;
+            display: block;
+            aspect-ratio: 16 / 9;
+        }
+
+        /* 3. Stilovi za Audio */
+        .audio-container {
+            background: linear-gradient(135deg, #eef2f3 0%, #8e9eab 100%);
+            padding: 3rem 1.5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        audio {
+            width: 100%;
+            max-width: 400px;
+        }
+
+        /* 4. Stilovi za Iframe (YouTube Embed) */
+        .iframe-container {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 16 / 9; /* Moderni CSS za responzivni omjer stranica */
+        }
+
+        .iframe-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* Opisi i tehnički detalji unutar kartica */
+        .code-badge {
+            display: inline-block;
+            background-color: #e2e8f0;
+            color: #4a5568;
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 0.85rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .description {
+            font-size: 0.95rem;
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        .features-list {
+            list-style: none;
+            font-size: 0.85rem;
+            color: #718096;
+            border-top: 1px dashed #e2e8f0;
+            padding-top: 1rem;
+        }
+
+        .features-list li {
+            margin-bottom: 0.3rem;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .features-list li::before {
+            content: "•";
+            color: var(--accent);
+            font-weight: bold;
+        }
+
+        /* Podnožje */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background-color: var(--primary);
+            color: #ffffff;
+            margin-top: 5rem;
+            font-size: 0.9rem;
+        }
